@@ -12,13 +12,13 @@ function changeContent(){
     document.getElementById("toChange").innerHTML="cambiado desde javascript"
 }
 
-function getCostumes(){
+function getCategory(){
     //elemento del DOM->document object model
     const $responseContainer=document.getElementById("response");
     // $responseContainer.innerHTML='texto agregado desde javascript';
     $.ajax({
         url:"https://g389439032223da-bxtdn7v5dsb6tede.adb.us-ashburn-1.oraclecloudapps.com/ords/admin/api/costumes",
-        type:"GET",
+        type:"POST",
         datatype:"JSON",
         success:function(response){
             console.log(response)
@@ -27,11 +27,17 @@ function getCostumes(){
                 const costume= response.items[x];
                 $responseContainer.innerHTML+=`
                 id:${costume.idcostume}
+                <br>
                 nombre:${costume.name} 
+                <br>
                 descripción:${costume.description} 
+                <br>
                 años:${costume.year} 
+                <br>
                 marca:${costume.brand} 
+                <br>
                 categoría:${costume.idcategory}                
+                <br>
                 <br>
                 `;
             }
@@ -39,7 +45,7 @@ function getCostumes(){
     })
 }
 
-function createCostume(){
+function createCategory(){
     
     let dataToSend={
         "idcostume": parseInt( $("#id").val()),
@@ -67,7 +73,7 @@ function createCostume(){
 
 }
 
-function updateCostume(){
+function updateCategory(){
     
     let dataToSend={
         "idcostume": parseInt( $("#id").val()),
@@ -94,7 +100,7 @@ function updateCostume(){
 
 }
 
-function deleteCostume(){
+function deleteCategory(){
     
     let dataToSend={
         "idcostume": parseInt( $("#id").val()),        
@@ -115,7 +121,4 @@ function deleteCostume(){
       });
 
 }
-
-console.log(sumTwoNumbers())
-changeContent()
 getCostumes()

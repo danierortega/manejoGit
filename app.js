@@ -28,8 +28,8 @@ function getCostumes(){
                 $responseContainer.innerHTML+=`
                 id:${costume.idcostume}
                 <br>
-                nombre:${costume.name}
-                <br> 
+                nombre:${costume.name} 
+                <br>
                 descripción:${costume.description} 
                 <br>
                 años:${costume.year} 

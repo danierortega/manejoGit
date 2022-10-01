@@ -1,18 +1,5 @@
-let x=14
-x=90
-var y = 20
-console.log(x+y)
 
-function sumTwoNumbers(){
-    return 4+5
-}
-
-function changeContent(){
-
-    document.getElementById("toChange").innerHTML="cambiado desde javascript"
-}
-
-function getCostumes(){
+function getQuadbike(){
     //elemento del DOM->document object model
     const $responseContainer=document.getElementById("response");
     // $responseContainer.innerHTML='texto agregado desde javascript';
@@ -27,11 +14,17 @@ function getCostumes(){
                 const costume= response.items[x];
                 $responseContainer.innerHTML+=`
                 id:${costume.idcostume}
+                <br>
                 nombre:${costume.name} 
+                <br>
                 descripción:${costume.description} 
+                <br>
                 años:${costume.year} 
+                <br>
                 marca:${costume.brand} 
+                <br>
                 categoría:${costume.idcategory}                
+                <br>
                 <br>
                 `;
             }
@@ -39,7 +32,7 @@ function getCostumes(){
     })
 }
 
-function createCostume(){
+function createQuadbike(){
     
     let dataToSend={
         "idcostume": parseInt( $("#id").val()),
@@ -67,7 +60,7 @@ function createCostume(){
 
 }
 
-function updateCostume(){
+function updateQuadbike(){
     
     let dataToSend={
         "idcostume": parseInt( $("#id").val()),
@@ -94,7 +87,7 @@ function updateCostume(){
 
 }
 
-function deleteCostume(){
+function deleteQuadbike(){
     
     let dataToSend={
         "idcostume": parseInt( $("#id").val()),        
@@ -116,6 +109,5 @@ function deleteCostume(){
 
 }
 
-console.log(sumTwoNumbers())
-changeContent()
-getCostumes()
+
+getQuadbike()
